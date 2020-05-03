@@ -7,19 +7,12 @@ const products = [
 
 const getAllPropValues = function(arr, prop) {
   let obj;
-  let elem;
-  let arrValue = [];
+  const arrValue = [];
   for (let i = 0; i < arr.length; i += 1) {
     obj = arr[i];
-    // eslint-disable-next-line
-    for (elem in obj) {
-      elem = obj[prop];
-      if (elem === undefined) {
-        arrValue = [];
-      }
-    }
-    if (elem !== undefined) {
-      arrValue.push(elem);
+
+    if (obj[prop] !== undefined) {
+      arrValue.push(obj[prop]);
     }
   }
   return arrValue;

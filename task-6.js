@@ -7,21 +7,14 @@ const products = [
 
 const calculateTotalPrice = function(allProdcuts, productName) {
   let obj;
-  let elementObj;
   let totalPrice;
   for (let i = 0; i < allProdcuts.length; i += 1) {
     obj = allProdcuts[i];
     // console.log(obj);
-    // eslint-disable-next-line
-    for (elementObj in obj) {
-      elementObj = Object.values(obj);
-      //   console.log(elementObj);
-      if (elementObj.includes(productName)) {
-        totalPrice = obj.price * obj.quantity;
-      }
+    if (obj.name === productName) {
+      totalPrice = obj.price * obj.quantity;
     }
   }
-
   return totalPrice;
 };
 
